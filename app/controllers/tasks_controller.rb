@@ -1,20 +1,27 @@
 class TasksController < ApplicationController
+ before_filter :authenticate_user!
+ 
  def index  
     @task = Task.new  
-    @tasks = Task.undone  
+    @tasks = current_user.tasks.undone  
   end  
   
   def done  
     @task = Task.new  
-    @tasks = Task.done  
+    @tasks = current_user.tasks.done  
     render :action => 'index'  
   end  
   
   def create  
     @task = Task.new(params[:task])  
     @task.done = false
-    @task.save  
-    redirect_to :tasks  
+    @task.user_id = current_user.id
+    if @task.save 
+      redirect_to :tasks 
+    else
+      @tasks = current_user.tasks.undone
+      render :action => 'index'
+    end
   end  
   
   def finish  

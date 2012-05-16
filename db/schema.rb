@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(:version => 20120516001517) do
   create_table "tasks", :force => true do |t|
     t.string   "name"
     t.date     "due_date"
-    t.boolean  "done"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "done",       :default => false, :null => false
+    t.integer  "user_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "users", :force => true do |t|
