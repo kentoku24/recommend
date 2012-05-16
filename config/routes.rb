@@ -1,5 +1,10 @@
 Devisetest::Application.routes.draw do
-  get "tasks/index"
+  devise_for :users
+
+  #get "welcome/index"
+
+  root :to => 'welcome#index'
+  
   resources :tasks, :only => [:index, :create] do
     put :finish, :on => :member
     put :unfinish, :on => :member  
