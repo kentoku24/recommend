@@ -1,7 +1,7 @@
 Devisetest::Application.routes.draw do
   
 
-  root :to => 'welcome#index'
+  #root :to => 'welcome#index'
   devise_for :users
   get 'tasks', :to => 'tasks#index', :as => :user_root
   
