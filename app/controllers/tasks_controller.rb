@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def create  
     @task = Task.new(params[:task])  
     @task.done = false
-    @task.user_id = current_user.id
+    @task.user_id = current_user.id #this line sets ownership of the task
     if @task.save 
       redirect_to :tasks 
     else
