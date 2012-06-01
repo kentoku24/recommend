@@ -2,8 +2,8 @@ class TasksController < ApplicationController
  before_filter :authenticate_user!
  
  def index  
-    @task = Task.new  
-    @tasks = current_user.tasks.undone  
+    @task = Task.new
+    @tasks = current_user.tasks.undone
   end  
   
   def done  
