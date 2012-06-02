@@ -10,9 +10,12 @@
 <% end %>
 <br>All Books<br>
 <table>
+<col class="title" />
+<col class="isbn" />
+<col class="commands" />
 <%if @books != nil%>
   <% @books.each do |book| %>
-    <%= render 'shared/book', :book => book %>
+    <%= render 'book', :book => book %>
   <% end %>
 <% end %>
 </table>

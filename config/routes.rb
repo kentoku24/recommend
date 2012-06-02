@@ -1,6 +1,9 @@
 Devisetest::Application.routes.draw do
   
-  resources :books, :only => [ :index, :create ]
+  resources :books, :only => [ :index, :create ] do
+    put :like, :on => :member
+    put :unlike, :on => :member
+  end
 
   root :to => 'welcome#index'
   devise_for :users

@@ -18,4 +18,18 @@ class BooksController < ApplicationController
       redirect_to :books 
     end
   end
+  
+  def like
+    @book = Book.find(params[:id])
+    like = Like.new
+    like.user_id = current_user.id
+    like.book_id = @book.id
+    like.save
+    redirect_to :back
+  end
+  
+  def unlike
+    #@book = Book.find(params[:id])
+  end
+  
 end
