@@ -1,0 +1,7 @@
+Book.create(:isbn => 1, :title => "Asuka-turn")  
+Book.create(:isbn => 2, :title => "Baka&Test")  
+Book.create(:isbn => 3, :title => "C")  
+Book.create(:isbn => 4, :title => "Dusk")  
+Book.create(:isbn => 5, :title => "Level-E")  
+Book.create(:isbn => 6, :title => "Prof. Fred")  
+Book.create(:isbn => 7, :title => "George")  
