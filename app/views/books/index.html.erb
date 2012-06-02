@@ -8,6 +8,19 @@
   <li><%= form.submit %></li>
 </ul>
 <% end %>
+
+<br>Recommended books for you <br>
+
+<table>
+<col class="title" />
+<col class="isbn" />
+<% @recs.each do |book| %>
+  <%= render 'shared/book', :book => book %>
+<% end %>
+
+</table>
+
+
 <br>All Books<br>
 <table>
 <col class="title" />

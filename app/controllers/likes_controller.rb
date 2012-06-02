@@ -4,7 +4,9 @@ class LikesController < ApplicationController
   
   def unlike
     like = Like.find(params[:id])
-    like.destroy
+    if like
+      like.destroy
+    end
     redirect_to :back
   end
 end
