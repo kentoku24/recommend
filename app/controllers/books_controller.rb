@@ -30,7 +30,9 @@ class BooksController < ApplicationController
   end
   
   def unlike
-    #@book = Book.find(params[:id])
+    @like = Like.find(params[:id])
+    like.destroy
+    redirect_to :back
   end
   
 end
