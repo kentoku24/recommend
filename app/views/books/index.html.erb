@@ -15,17 +15,15 @@
 <col class="commands" />
 <%if @books != nil%>
   <% @books.each do |book| %>
-    <%= render 'book', :book => book %>
+    <%= render 'allbook', :book => book %>
   <% end %>
 <% end %>
 </table>
 <br><br>---------------------------<br><br>
 My books<br>
 <table>
-<%if @mybooks != nil%>
-  <% @mybooks.each do |book| %>
-    <%= render 'shared/book', :book => book %>
+  <% @likes.each do |like| %>
+    <%= render 'mybook', :like => like %>
   <% end %>
-<% end %>
 </table>
 <br><br>

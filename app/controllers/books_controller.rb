@@ -3,6 +3,7 @@ class BooksController < ApplicationController
     @book = Book.new
     @mybooks = current_user.books
     @books = Book.all - @mybooks
+    @likes = current_user.likes
   end
   
   def create
