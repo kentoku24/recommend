@@ -1,4 +1,4 @@
-%w(alpha bravo charlie delta echo).each do |name|  
+%w(asuka brad chris dan elis).each do |name|  
   user = User.create(  
     :email => "#{name}@ex.com",  
     :password => "#{name}...",  

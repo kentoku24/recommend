@@ -1,5 +1,7 @@
 Devisetest::Application.routes.draw do
   
+  get "likes/index"
+
   resources :books, :only => [ :index, :create ] do
     put :like, :on => :member
     put :unlike, :on => :member
@@ -8,6 +10,10 @@ Devisetest::Application.routes.draw do
   root :to => 'welcome#index'
   devise_for :users
   get 'books', :to => 'books#index', :as => :user_root
+
+  resources :likes, :only => [:index] do
+    put :unlike, :on => :member
+  end
   
   resources :tasks, :only => [:index, :create] do
     put :finish, :on => :member
