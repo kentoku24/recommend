@@ -4,6 +4,7 @@ class TasksController < ApplicationController
  def index  
     @task = Task.new
     @tasks = current_user.tasks.undone
+    @books = current_user.books
   end  
   
   def done  

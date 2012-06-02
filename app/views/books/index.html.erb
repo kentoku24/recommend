@@ -1,0 +1,28 @@
+<h1>Books#index</h1>
+<p>Find me in app/views/books/index.html.erb</p>
+
+<%= form_for @book do |form| %>
+<ul>
+  <li><%= form.label :title %><%= form.text_field :title %></li>
+  <li><%= form.label :isbn  %><%= form.text_field :isbn %></li>
+  <li><%= form.submit %></li>
+</ul>
+<% end %>
+<br>All Books<br>
+<table>
+<%if @books != nil%>
+  <% @books.each do |book| %>
+    <%= render 'shared/book', :book => book %>
+  <% end %>
+<% end %>
+</table>
+<br><br>---------------------------<br><br>
+My books<br>
+<table>
+<%if @mybooks != nil%>
+  <% @mybooks.each do |book| %>
+    <%= render 'shared/book', :book => book %>
+  <% end %>
+<% end %>
+</table>
+<br><br>

@@ -1,7 +1,5 @@
 <h1>Tasks#index</h1>
 <p>Find me in app/views/tasks/index.html.erb</p>
-<%= link_to('Sign out', [ :destroy, :user_session ], :method => :delete, :class => 'signOut') if current_user %>
-
 
 <%= form_for @task do |form| %>
 <ul>
@@ -11,7 +9,6 @@
 </ul>
 <% end %>
 
-
 <%= navigation_links %>
 
 <table class="tasks">
@@ -20,5 +17,11 @@
   <col class="commands" />
   <% @tasks.each do |task| %>
     <%= render 'task', :task => task %>
+  <% end %>
+  
+  <%if @books != nil%>
+    <% @books.each do |book| %>
+      <%= render 'book', :book => book %>
+    <% end %>
   <% end %>
 </table>
